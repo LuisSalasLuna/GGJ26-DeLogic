@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://1nb6lv0fuqwb"]
+
+[ext_resource type="Texture2D" uid="uid://ukq65njgk4yx" path="res://sprites/Tile_63.png" id="9_42irl"]
+
+[sub_resource type="GDScript" id="GDScript_7uws0"]
+script/source = "extends CharacterBody2D
+
+@export var move_speed: float
+var facing_right = true
+
+func _physics_process(_delta):
+	print(\"loop\")
+	move_x()
+	rotate_x()
+	move_and_slide()
+
+func move_x():
+	var input_axis = Input.get_axis(\"left\", \"right\")
+	velocity.x = input_axis + move_speed
+	print(\"move\")
+	
+	
+func rotate_x():
+	if (facing_right and velocity.x<0) or (not facing_right and velocity.x>0):
+		print(velocity.x)
+		scale.x *= -1
+		facing_right = not facing_right
+	
+	
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6avc5"]
+size = Vector2(16, 31.5)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1, 1)
+script = SubResource("GDScript_7uws0")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.25)
+shape = SubResource("RectangleShape2D_6avc5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("9_42irl")
