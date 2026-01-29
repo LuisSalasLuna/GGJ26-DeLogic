@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://flxrqxsgef4w"]
+
+[ext_resource type="Texture2D" uid="uid://cqsq5bpt76vcj" path="res://sprites/world_tl.png" id="1_r6txm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kt72"]
+atlas = ExtResource("1_r6txm")
+region = Rect2(16, 176, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5auc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kt72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_r6txm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="poseido" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8.5)
+scale = Vector2(0.969, 2)
+sprite_frames = SubResource("SpriteFrames_d5auc")
