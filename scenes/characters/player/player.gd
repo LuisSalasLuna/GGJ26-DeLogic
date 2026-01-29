@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
+#--espera presionar/m
 func _input(event):
 	if event.is_action_pressed("cambiar_modo"):
 		cambiar_modo()
