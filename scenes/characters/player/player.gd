@@ -94,4 +94,3 @@ func cambiar_modo():
 		speed = speed_mode_1
 		print("Modo 1 activado")
 		
->>>>>>> 77177707435103305a76024004c8d26830084ebb
