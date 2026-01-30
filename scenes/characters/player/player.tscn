@@ -64,11 +64,6 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(331, -310)
 script = ExtResource("1_t61fv")
-move_speed = null
-jump_speed = null
-gravity = null
-speed_mode_1 = null
-speed_mode_2 = null
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -93,5 +88,5 @@ frame_progress = 0.10557223
 position = Vector2(6.9422667e-06, -6.9999995)
 scale = Vector2(0.099379025, 0.113022156)
 sprite_frames = ExtResource("4_hss88")
-animation = &"saltar"
-frame_progress = 0.7507683
+animation = &"idle"
+frame_progress = 0.50058395

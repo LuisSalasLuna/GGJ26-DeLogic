@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var speed_mode_2 := 400
 @onready var sprite_a := $AnimatedSprite2D
 @onready var sprite_b := $Modo2
-@onready var spriteZ := sprite_a
+@onready var spriteZ := $Modo2
 var facing_right := true
 var modo := 1
 var speed := speed_mode_1
@@ -21,7 +21,8 @@ func _physics_process(delta: float) -> void:
 	# --- Flip del personaje ---
 	if input_axis != 0:
 		facing_right = input_axis > 0
-		spriteZ.flip_h = not facing_right
+		$Modo2.flip_h = not facing_right
+		$AnimatedSprite2D.flip_h = not facing_right
 
 	# --- Gravedad ---
 	if not is_on_floor():
