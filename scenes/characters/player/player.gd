@@ -5,10 +5,13 @@ extends CharacterBody2D
 @export var gravity: float = 1200
 @export var speed_mode_1 := 50
 @export var speed_mode_2 := 400
-
+@onready var sprite_a := $AnimatedSprite2D
+@onready var sprite_b := $Modo2
+@onready var spriteZ := sprite_a
 var facing_right := true
 var modo := 1
 var speed := speed_mode_1
+
 
 func _physics_process(delta: float) -> void:
 	# --- Movimiento horizontal ---
@@ -18,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	# --- Flip del personaje ---
 	if input_axis != 0:
 		facing_right = input_axis > 0
-		$Sprite2D.flip_h = not facing_right
+		spriteZ.flip_h = not facing_right
 
 	# --- Gravedad ---
 	if not is_on_floor():
@@ -27,20 +30,37 @@ func _physics_process(delta: float) -> void:
 	# --- Salto ---
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jump_speed
+		
+	update_animation(input_axis)
 
 	move_and_slide()
 	
+func update_animation(input_axis):
+	if not is_on_floor():
+		spriteZ.play("saltar")
+	elif input_axis != 0:
+		spriteZ.play("correr")
+	else:
+		spriteZ.play("idle")
 #--espera presionar/m
+
 func _input(event):
 	if event.is_action_pressed("cambiar_modo"):
 		cambiar_modo()
-		
+func _ready():
+	sprite_b.visible = false  # empieza oculto
+			
 func cambiar_modo():
+	sprite_a.visible = not sprite_a.visible
+	sprite_b.visible = not sprite_b.visible
 	if modo == 1:
 		modo = 2
 		speed = speed_mode_2
 		print("Modo 2 activado")
+		spriteZ = sprite_a
 	else:
 		modo = 1
 		speed = speed_mode_1
 		print("Modo 1 activado")
+		spriteZ = sprite_b
+		

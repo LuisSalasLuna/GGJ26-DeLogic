@@ -1,0 +1,77 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://cap2g58ooviog"]
+
+[ext_resource type="Texture2D" uid="uid://c3lh8hmtiyofq" path="res://sprites/personaje/Nigromante_Esbirro_2.png" id="1_04dxi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04dxi"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(322, 0, 322, 407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srlnn"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(644, 0, 322, 407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmye6"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(0, 407, 322, 407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad4wh"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(322, 407, 322, 407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4bgk"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(644, 407, 322, 407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa0a2"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(644, 814, 322, 407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk65s"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(0, 0, 322, 407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74gka"]
+atlas = ExtResource("1_04dxi")
+region = Rect2(322, 814, 322, 407)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04dxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srlnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmye6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad4wh")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4bgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa0a2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk65s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74gka")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 2.0
+}]
