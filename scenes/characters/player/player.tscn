@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://1nb6lv0fuqwb"]
+[gd_scene load_steps=5 format=3 uid="uid://1nb6lv0fuqwb"]
 
 [ext_resource type="Script" uid="uid://djjadmbtcuiaa" path="res://scenes/characters/player/player.gd" id="1_t61fv"]
 [ext_resource type="Texture2D" uid="uid://ukq65njgk4yx" path="res://sprites/Tile_63.png" id="9_42irl"]
@@ -6,17 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6avc5"]
 size = Vector2(16, 31.5)
 
-[sub_resource type="Animation" id="Animation_686vu"]
-resource_name = "prueba"
-
-[sub_resource type="Animation" id="Animation_hss88"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qd3e3"]
-_data = {
-&"RESET": SubResource("Animation_hss88"),
-&"prueba": SubResource("Animation_686vu")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_t61fv"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, 1)
@@ -33,7 +23,5 @@ shape = SubResource("RectangleShape2D_6avc5")
 position = Vector2(0, -5)
 texture = ExtResource("9_42irl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qd3e3")
-}
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t61fv")
