@@ -81,12 +81,13 @@ texture = ExtResource("9_42irl")
 position = Vector2(1, -7)
 scale = Vector2(0.02377891, 0.02562502)
 sprite_frames = SubResource("SpriteFrames_t61fv")
-animation = &"saltar"
-frame_progress = 0.10557223
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Modo2" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(6.9422667e-06, -6.9999995)
 scale = Vector2(0.099379025, 0.113022156)
 sprite_frames = ExtResource("4_hss88")
 animation = &"idle"
-frame_progress = 0.50058395
+frame_progress = 0.10398456
