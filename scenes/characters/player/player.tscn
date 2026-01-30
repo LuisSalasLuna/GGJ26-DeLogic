@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://1nb6lv0fuqwb"]
+[gd_scene load_steps=5 format=3 uid="uid://1nb6lv0fuqwb"]
 
 [ext_resource type="Script" uid="uid://djjadmbtcuiaa" path="res://scenes/characters/player/player.gd" id="1_t61fv"]
+[ext_resource type="AudioStream" uid="uid://dtfnnxt1b2mtr" path="res://musica/Invincible - FiftySounds.mp3" id="3_686vu"]
 [ext_resource type="Texture2D" uid="uid://ukq65njgk4yx" path="res://sprites/Tile_63.png" id="9_42irl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6avc5"]
-size = Vector2(16, 31.5)
+size = Vector2(16, 32)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(1, 1)
 script = ExtResource("1_t61fv")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5.25)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_6avc5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -20,3 +21,10 @@ shape = SubResource("RectangleShape2D_6avc5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
 texture = ExtResource("9_42irl")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 17.7)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_686vu")
+autoplay = true
