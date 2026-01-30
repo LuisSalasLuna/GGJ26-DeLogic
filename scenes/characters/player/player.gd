@@ -59,12 +59,10 @@ func _physics_process(delta: float) -> void:
 	update_animation(input_axis)
 
 	move_and_slide()
-<<<<<<< HEAD
 		
 func morir():
 	print("MUERTE POR LAVA")
 	get_tree().reload_current_scene()
-=======
 
 func update_animation(input_axis):
 	if not is_on_floor(): #if estadoActual == ESTADOS.SALTAR:
