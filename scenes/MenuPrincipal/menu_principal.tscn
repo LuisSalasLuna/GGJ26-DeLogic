@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgl50yy37oo67"]
+
+[ext_resource type="Texture2D" uid="uid://b3y1xppkexf8y" path="res://sprites/fondoMask.png" id="1_y2ah5"]
+[ext_resource type="Script" uid="uid://4d7g8c5a8vvg" path="res://scenes/MenuPrincipal/jugar.gd" id="2_csybw"]
+[ext_resource type="Script" uid="uid://n527b3x6ypma" path="res://scenes/MenuPrincipal/comojugar.gd" id="3_bmd8t"]
+[ext_resource type="Script" uid="uid://cyfjfpqfpujbw" path="res://scenes/MenuPrincipal/creditos.gd" id="3_d732k"]
+[ext_resource type="AudioStream" uid="uid://dtfnnxt1b2mtr" path="res://musica/Invincible - FiftySounds.mp3" id="3_neegy"]
+[ext_resource type="Script" uid="uid://3wyf1tmve0uw" path="res://scenes/MenuPrincipal/salir.gd" id="4_pamu7"]
+
+[sub_resource type="Theme" id="Theme_5ga6r"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(243.50002, 136)
+scale = Vector2(0.5185547, 0.21614583)
+texture = ExtResource("1_y2ah5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5ga6r")
+theme_override_constants/separation = 20
+
+[node name="Jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "JUGAR
+"
+script = ExtResource("2_csybw")
+
+[node name="comojugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "TUTORIAL"
+script = ExtResource("3_bmd8t")
+
+[node name="creditos" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "CREDITOS"
+script = ExtResource("3_d732k")
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SALIR
+"
+script = ExtResource("4_pamu7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_neegy")
+autoplay = true

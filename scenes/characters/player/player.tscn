@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://1nb6lv0fuqwb"]
+
+[ext_resource type="Script" uid="uid://djjadmbtcuiaa" path="res://scenes/characters/player/player.gd" id="1_t61fv"]
+[ext_resource type="Texture2D" uid="uid://bxnm25rcynr4g" path="res://sprites/personaje/1_Sprit_Warrior.png" id="3_686vu"]
+[ext_resource type="SpriteFrames" uid="uid://cap2g58ooviog" path="res://scenes/characters/player/sprite_modo2.tres" id="4_hss88"]
+[ext_resource type="AudioStream" uid="uid://dtfnnxt1b2mtr" path="res://musica/Invincible - FiftySounds.mp3" id="5_qd3e3"]
+[ext_resource type="Texture2D" uid="uid://ukq65njgk4yx" path="res://sprites/Tile_63.png" id="9_42irl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6avc5"]
+size = Vector2(16, 31.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_686vu"]
+atlas = ExtResource("3_686vu")
+region = Rect2(1556, 0, 1556, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd3e3"]
+atlas = ExtResource("3_686vu")
+region = Rect2(0, 1600, 1556, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hss88"]
+atlas = ExtResource("3_686vu")
+region = Rect2(0, 1600, 1556, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6avc5"]
+atlas = ExtResource("3_686vu")
+region = Rect2(0, 1600, 1556, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk55u"]
+atlas = ExtResource("3_686vu")
+region = Rect2(0, 0, 1556, 1600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t61fv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_686vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd3e3")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hss88")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6avc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk55u")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 3.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(331, -310)
+collision_mask = 5
+script = ExtResource("1_t61fv")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_6avc5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -5)
+texture = ExtResource("9_42irl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -7)
+scale = Vector2(0.02377891, 0.02562502)
+sprite_frames = SubResource("SpriteFrames_t61fv")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Modo2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(6.9422667e-06, -6.9999995)
+scale = Vector2(0.099379025, 0.113022156)
+sprite_frames = ExtResource("4_hss88")
+animation = &"idle"
+frame_progress = 0.10398456
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qd3e3")
+autoplay = true

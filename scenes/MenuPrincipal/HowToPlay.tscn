@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://djumjacptt7l5"]
+
+[ext_resource type="Texture2D" uid="uid://b3y1xppkexf8y" path="res://sprites/fondoMask.png" id="1_4oqcf"]
+[ext_resource type="Texture2D" uid="uid://cmmeerojoie13" path="res://sprites/Teclas2.png" id="2_qmlu6"]
+[ext_resource type="Script" uid="uid://cybu47f5w205q" path="res://scenes/MenuPrincipal/button.gd" id="3_qmlu6"]
+[ext_resource type="AudioStream" uid="uid://dtfnnxt1b2mtr" path="res://musica/Invincible - FiftySounds.mp3" id="4_52yqc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(243.5, 136)
+scale = Vector2(0.519, 0.216)
+texture = ExtResource("1_4oqcf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 20.0
+offset_right = 444.0
+offset_bottom = 199.0
+color = Color(0.32156864, 0.32156864, 0.32156864, 0.59607846)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(102, 89)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_qmlu6")
+
+[node name="Moverse" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 40.0
+offset_right = 301.0
+offset_bottom = 63.0
+text = "Moverse"
+
+[node name="Saltar" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 85.0
+offset_right = 290.0
+offset_bottom = 108.0
+text = "Saltar"
+
+[node name="Estado" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 129.0
+offset_right = 327.0
+offset_bottom = 152.0
+text = "Cambiar estado"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 215.0
+offset_right = 308.0
+offset_bottom = 255.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "MENU PRINCIPAL"
+script = ExtResource("3_qmlu6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_52yqc")
+autoplay = true

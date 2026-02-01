@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://xr7slxql56bn"]
+
+[ext_resource type="Texture2D" uid="uid://b3y1xppkexf8y" path="res://sprites/fondoMask.png" id="1_vcucn"]
+[ext_resource type="Script" uid="uid://cybu47f5w205q" path="res://scenes/MenuPrincipal/button.gd" id="2_d7bc6"]
+[ext_resource type="AudioStream" uid="uid://dtfnnxt1b2mtr" path="res://musica/Invincible - FiftySounds.mp3" id="3_8m27p"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(243.5, 136)
+scale = Vector2(0.519, 0.216)
+texture = ExtResource("1_vcucn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 50.0
+offset_right = 446.0
+offset_bottom = 134.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "¡FELICIDADES, GANASTE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 201.0
+offset_right = 446.0
+offset_bottom = 232.0
+text = "MENU PRINCIPAL"
+script = ExtResource("2_d7bc6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8m27p")
+autoplay = true
