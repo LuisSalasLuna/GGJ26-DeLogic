@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://inh0jbntj6cv"]
-
-[ext_resource type="Script" uid="uid://dvmxp621neby0" path="res://scenes/assets/Imagen_tile.gd" id="1_ug7x2"]
-[ext_resource type="Texture2D" uid="uid://dy50x5wtuovu3" path="res://sprites/world_tileset.png" id="2_jvpmi"]
-
-[node name="Sprite2D" type="Sprite2D"]
-script = ExtResource("1_ug7x2")
-tileset_texture = ExtResource("2_jvpmi")
-region = Rect2(0, 0, 16, 16)
